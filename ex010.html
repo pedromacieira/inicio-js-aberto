@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Multas</title>
+
+    <style>
+
+        html {
+            background-color: rgba(247, 247, 111, 0.884);
+        }
+
+        body{
+            background-color: gray;
+            border-radius: 15px;
+            padding-bottom: 8px;
+            width: 280px;
+            margin: auto;
+            margin-top: 180px;
+        }
+
+        h1 {
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        p#multa {
+            font-size: 1.4em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Sistemas de Multas</h1>
+    
+    Velocidade do carro: <input type="number" name="txtvel" id="itxtvel"> Km/h
+
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+
+
+    </div>
+
+    <script>
+
+        function calcular() {
+            var txtv = window.document.querySelector('input#itxtvel')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML =`<p>Sua velocidade atual é de <strong>${vel}Km/h<\strong></p>`
+
+            if (vel > 60){
+                res.innerHTML += `<p id='multa'> Você passou dos 60Km/h, por isso foi <strong>MULTADO!</strong></p>`
+            }
+
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+            
+        }
+
+    </script>
+
+</body>
+</html>
